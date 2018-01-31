@@ -641,6 +641,11 @@
 			<cutdirsmapper dirs="1" />
 		</untar>
 
+		<!-- fix high DPI config -->
+		<exec executable="mt" dir="${dir.staging}" failonerror="yes">
+			<arg line="-nologo -manifest ${dir.installer}/appx/javaw.exe.manifest -outputresource:jre/bin/javaw.exe" />
+		</exec>
+
 		<!-- package APPX -->
 		<exec executable="makepri" dir="${dir.staging}" failonerror="yes">
 			<arg line="createconfig /o /pv 10.0.0 /cf priconfig.xml /dq en-US" />
