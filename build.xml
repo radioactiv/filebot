@@ -643,7 +643,7 @@
 
 		<!-- fix high DPI config -->
 		<exec executable="mt" dir="${dir.staging}" failonerror="yes">
-			<arg line="-nologo -manifest ${dir.installer}/appx/javaw.exe.manifest -outputresource:jre/bin/javaw.exe" />
+			<arg line="-verbose -nologo -manifest ${dir.installer}/appx/javaw.exe.manifest -outputresource:jre/bin/javaw.exe" />
 		</exec>
 
 		<!-- package APPX -->
