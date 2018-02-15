@@ -666,7 +666,7 @@
 
 		<!-- self-sign APPX (to make sure APPX package is valid and can be signed by Microsoft) -->
 		<exec executable="signtool" failonerror="yes">
-			<arg line="sign /fd sha256 ${mws.pfx} dist/* ${dir.dist}/${release}_r${revision}_${arch}.appx" />
+			<arg line="sign /fd sha256 /f ${mws.pfx} dist/* ${dir.dist}/${release}_r${revision}_${arch}.appx" />
 		</exec>
 	</target>
 
