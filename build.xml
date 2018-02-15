@@ -641,10 +641,17 @@
 			<cutdirsmapper dirs="1" />
 		</untar>
 
+
+		<!-- remove existing signature to fix "SignTool Error: SignedCode::Sign returned error: 0x800700C1" caused by replacing the manifest and breaking the signature -->
+		<exec executable="signtool" dir="${dir.staging}" failonerror="yes">
+			<arg line="remove /s jre/bin/javaw.exe" />
+		</exec>
+
 		<!-- fix high DPI config -->
 		<exec executable="mt" dir="${dir.staging}" failonerror="yes">
-			<arg line="-verbose -nologo -manifest ${dir.installer}/appx/javaw.exe.manifest -outputresource:jre/bin/javaw.exe" />
+			<arg line="-verbose -nologo -manifest ${dir.installer}/appx/javaw.exe.manifest -outputresource:jre/bin/javaw.exe;#1" />
 		</exec>
+
 
 		<!-- package APPX -->
 		<exec executable="makepri" dir="${dir.staging}" failonerror="yes">
@@ -655,6 +662,11 @@
 		</exec>
 		<exec executable="makeappx" dir="${dir.dist}" failonerror="yes">
 			<arg line="pack /v /o /d ${dir.staging} /p ${release}_r${revision}_${arch}.appx" />
+		</exec>
+
+		<!-- self-sign APPX (to make sure APPX package is valid and can be signed by Microsoft) -->
+		<exec executable="signtool" failonerror="yes">
+			<arg line="/fd sha256 ${mws.pfx} dist/* ${dir.dist}/${release}_r${revision}_${arch}.appx" />
 		</exec>
 	</target>
 
