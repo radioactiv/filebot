@@ -1,9 +1,19 @@
-# FileBot
+# Purpose of fork
+Want to get rid of the fake update notification in filebot?  Tired of the donate request when you close it?  You can modify the content of the original JAR and disable these things.  
 
-The FileBot source code is available for your convenience:
+## disclaimer
+No content of this repository was used in these instructions, much of the source code has been removed from this fork, all information below was obtained by decompiling the jar file that was made publicly available in previous releases by the original author.  This will not help you compile the current code base, or include any of that functionality into prior releases.
 
-* You may view the source code and learn from it.
-* You may build FileBot for private use on unsupported platforms.
-* You may NOT use the source code to avoid paying for FileBot or help others to do so.
 
-Please respect the author that is kindly making the source code available under the [MODIFIED DON'T BE A DICK PUBLIC LICENSE](https://github.com/filebot/filebot/blob/master/LICENSE.md).
+# What it is/what it isn't
+In order to demonstrate that the original author's license is being followed, here's a summary.
+What I won't give you:
+ * Compiled Java .class files
+ * Compiled JAR files
+ * Patch files/scripts that make changes for you
+
+What you will get:
+ * Publicly available commands to use the Java JDK to compile a Java file.
+ * Publicly available commands to use the Java JDK to replace files in a JAR file.
+ * Basic information on using the open source program Luyten [https://github.com/deathmarine/Luyten] to decompile Java .class files into Java source code. 
+
