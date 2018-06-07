@@ -22,3 +22,7 @@ Helpful Websites: https://leons.im/posts/modify-java-class-in-a-jar/
 Tips: 
   * "//" comments out code in Java.
   * The Java compiler (javac) gives you the line number of an error.  
+
+According to TheTVDB, Filebot should pay $5+ per month for using their service for profit.  I've registered for an API key for this fork.
+
+The API key for this fork requires decrypting to be useful.  Industry standard ROT13 -> BASE62 was used to protect the original key.  1ceRQ4SncgIIfe09vl9DtB
